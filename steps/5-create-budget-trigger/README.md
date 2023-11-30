@@ -1,4 +1,4 @@
-# Шаг 4. Создание Триггера
+# Шаг 5. Создание Триггера
 
 Пока вы находитесь в web-интерфейсе Yandex Cloud вы можете создать триггер согласно этой [инструкции](https://cloud.yandex.ru/docs/functions/operations/trigger/budget-trigger-create). Выбирайте тип триггера `Бюджет`, указывайте свой платежный аккаунт и бюджет созданный на прерыдущем шаге. В качестве функции выберете функцию `function-for-budget` и в качестве сервисного аккаунта `service-account-for-budget`.   
 
@@ -14,10 +14,10 @@
 
     yc serverless trigger create billing-budget \
     --name trigger-for-budget-from-yc \
-    --invoke-function-name function-for-budget \
+    --invoke-function-name budget-trigger-handler \
     --invoke-function-service-account-id $SERVICE_ACCOUNT_ID  \
-    --billing-account-id dn2ird4oge8fuhdo5071  \
-    --budget-id dn24n3drtjfsp99gqb42
+    --billing-account-id <id_вашего_биллинг_аккаута>  \
+    --budget-id <id_вашего_бюджета>
 
     yc serverless trigger list
 
