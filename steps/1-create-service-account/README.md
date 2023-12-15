@@ -43,6 +43,15 @@
     --subject serviceAccount:$SERVICE_ACCOUNT_ID \
     --role editor
 
+## Создание статического ключа доступа для сервисного аккаунта
+
+    yc iam access-key create --service-account-name service-account-for-budget
+
+Добавим полученный ключ доступа в переменные окружения:
+
+    export AWS_ACCESS_KEY_ID=<key_id>
+    export AWS_SECRET_ACCESS_KEY=<secret>
+
 ## Видео
 
 https://youtu.be/q8LJ0MfUhV4
